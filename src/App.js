@@ -27,14 +27,17 @@ function App() {
             const response = await fetch(
                 "https://example-apis.vercel.app/api/weather"
             );
-            const weather = await response.json();
-            console.log(weather);
-            setWeather(weather);
+            const weatherData = await response.json();
+            console.log(weatherData);
+            setWeather(weatherData);
         }
         startFetching();
     }, []);
     const goodActivities = activities.filter((activity) => {
-        return activity.isGoodWeather === { weather };
+        return activity.isforGoodWeather === true;
+    });
+    const badActivities = activities.filter((activity) => {
+        return activity.isforGoodWeather === false;
     });
     return (
         <>
@@ -42,7 +45,12 @@ function App() {
                 onAddActivity={onActivitySubmit}
                 handleAddActivity={handleAddActivity}
             />
-            <List activities={goodActivities} isGoodWeather={{ weather }} />
+            <List
+                activities={
+                    weather.isGoodWeather ? goodActivities : badActivities
+                }
+                isforGoodWeather={weather.isGoodWeather}
+            />
         </>
     );
 }

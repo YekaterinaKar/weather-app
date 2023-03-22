@@ -5,11 +5,11 @@ export default function Form({ onAddActivity, handleAddActivity }) {
 
         const activity = elements.name.value;
 
-        const isGoodWeather = elements.isGoodWeather.checked;
+        const isforGoodWeather = elements.isforGoodWeather.checked;
 
         const data = {
             name: activity,
-            isGoodWeather: isGoodWeather,
+            isforGoodWeather: isforGoodWeather,
         };
 
         onAddActivity(data);
@@ -26,7 +26,7 @@ export default function Form({ onAddActivity, handleAddActivity }) {
             <br />
             <input id="name" text="name" name="name" />
             <br />
-            <input id="check" type="checkbox" name="isGoodWeather" />
+            <input id="check" type="checkbox" name="isforGoodWeather" />
             <label htmlFor="check">Good Weather Activity</label>
             <br />
             <button type="submit">Submit</button>
