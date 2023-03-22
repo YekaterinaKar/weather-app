@@ -7,7 +7,7 @@ export default function Form({ onAddActivity }) {
     function addActivity(event) {
         event.preventDefault();
         const elements = event.target.elements;
-        // setActivity(data.name);
+       
 
         const activity = elements.name.value;
 
@@ -19,6 +19,7 @@ export default function Form({ onAddActivity }) {
         };
 
         onAddActivity(data);
+       
         event.target.reset();
         event.target.elements.name.focus();
     }
