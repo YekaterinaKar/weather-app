@@ -49,11 +49,11 @@ function App() {
     });
 
     return (
-        <>
-            <>
+        <div className="all">
+            <header className="header">
                 <h2>{weather.temperature + "°C"} </h2>
                 <h2>{weather.condition} </h2>
-            </>
+            </header>
             <Form
                 onAddActivity={onActivitySubmit}
                 handleAddActivity={handleAddActivity}
@@ -65,7 +65,7 @@ function App() {
                 }
                 isforGoodWeather={weather.isGoodWeather}
             />
-        </>
+        </div>
     );
 }
 
