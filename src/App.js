@@ -1,13 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Form from "./Components/Form";
+import Form from "./Components/Form/Form";
 
 function App() {
-  return (
-    <>
-      <Form />
-    </>
-  );
+    function onActivitySubmit(data) {
+        console.log("onAddActivity", data);
+    }
+    return (
+        <>
+            <h1>uhuhuhhu</h1>
+            <Form onAddActivity={onActivitySubmit} />
+        </>
+    );
 }
 
 export default App;
