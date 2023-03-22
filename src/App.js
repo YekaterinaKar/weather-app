@@ -14,6 +14,9 @@ function App() {
         setActivities([...activities, { ...data, id: uid() }]);
         console.log(data);
     }
+    function handleDeleteActivity(id) {
+        setActivities(activities.filter((activity) => activity.id !== id));
+    }
 
     function onActivitySubmit(data) {
         console.log("onAddActivity", data);
@@ -52,6 +55,8 @@ function App() {
                 handleAddActivity={handleAddActivity}
             />
             <List
+                // onDeleteActivity={handleDeleteActivity}
+                onDeleteActivity={handleDeleteActivity}
                 activities={
                     weather.isGoodWeather ? goodActivities : badActivities
                 }

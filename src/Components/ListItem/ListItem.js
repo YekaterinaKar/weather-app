@@ -1,3 +1,10 @@
-export default function ListItem({ activity }) {
-    return <li key={activity.id}>{activity.name} </li>;
+export default function ListItem({ activity, onDeleteActivity }) {
+    return (
+        <>
+            <li key={activity.id}>{activity.name} </li>
+            <button onClick={() => onDeleteActivity(activity.id)}>
+                Delete
+            </button>
+        </>
+    );
 }
