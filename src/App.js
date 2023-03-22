@@ -29,16 +29,11 @@ function App() {
     });
     return (
         <>
-<<<<<<< HEAD
-            <h1>uhuhuhhu</h1>
-            <Form onAddActivity={onActivitySubmit} />
-=======
             <Form
                 onAddActivity={onActivitySubmit}
                 handleAddActivity={handleAddActivity}
             />
             <List activities={goodActivities} isGoodWeather={{ weather }} />
->>>>>>> 1031b794cd315756363131f62b015edba2e52ada
         </>
     );
 }
