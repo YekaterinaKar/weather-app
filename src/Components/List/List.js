@@ -1,10 +1,17 @@
 import ListItem from "../ListItem/ListItem";
-export default function List({ activities }) {
+export default function List({ activities, isGoodWeather }) {
     return (
-        <ul>
-            {activities.map((activity) => (
-                <ListItem key={activity.id} activity={activity} />
-            ))}
-        </ul>
+        <>
+            <h2>
+                {isGoodWeather
+                    ? "The weather is awesome, go outside and:"
+                    : "Bad weather outside. Here is what you can do"}
+            </h2>
+            <ul>
+                {activities.map((activity) => (
+                    <ListItem key={activity.id} activity={activity} />
+                ))}
+            </ul>
+        </>
     );
 }
