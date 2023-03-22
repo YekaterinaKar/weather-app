@@ -1,9 +1,9 @@
 import ListItem from "../ListItem/ListItem";
-export default function List({ activities, isGoodWeather }) {
+export default function List({ activities, isforGoodWeather }) {
     return (
         <>
             <h2>
-                {isGoodWeather
+                {isforGoodWeather
                     ? "The weather is awesome, go outside and:"
                     : "Bad weather outside. Here is what you can do"}
             </h2>
