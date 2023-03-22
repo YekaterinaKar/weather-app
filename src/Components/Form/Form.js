@@ -1,13 +1,8 @@
-import React, { useState } from "react";
-
-export default function Form({ onAddActivity }) {
-    // const [activity, setActivity] = useState([]);
-    // const [isGoodWeather, set] = useState(false);
-
+export default function Form({ onAddActivity, handleAddActivity }) {
     function addActivity(event) {
         event.preventDefault();
         const elements = event.target.elements;
-       
+      
 
         const activity = elements.name.value;
 
@@ -19,7 +14,7 @@ export default function Form({ onAddActivity }) {
         };
 
         onAddActivity(data);
-       
+        handleAddActivity(data);
         event.target.reset();
         event.target.elements.name.focus();
     }
