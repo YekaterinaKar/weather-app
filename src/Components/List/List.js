@@ -1,5 +1,9 @@
 import ListItem from "../ListItem/ListItem";
-export default function List({ activities, isforGoodWeather }) {
+export default function List({
+    activities,
+    isforGoodWeather,
+    onDeleteActivity,
+}) {
     return (
         <>
             <h2>
@@ -9,7 +13,11 @@ export default function List({ activities, isforGoodWeather }) {
             </h2>
             <ul>
                 {activities.map((activity) => (
-                    <ListItem key={activity.id} activity={activity} />
+                    <ListItem
+                        onDeleteActivity={onDeleteActivity}
+                        key={activity.id}
+                        activity={activity}
+                    />
                 ))}
             </ul>
         </>
