@@ -22,8 +22,6 @@ function App() {
         console.log("onAddActivity", data);
     }
 
-    //const  isGoodWeather = true;
-
     const [weather, setWeather] = useState([]);
     useEffect(() => {
         async function startFetching() {
@@ -33,17 +31,23 @@ function App() {
             const weatherData = await response.json();
             console.log(weatherData);
             setWeather(weatherData);
-            console.log(weatherData.temperature);
-            console.log(weatherData.condition);
         }
         startFetching();
+
+        const interval = setInterval(() => {
+            startFetching();
+        }, 5000);
+
+        return () => clearInterval(interval);
     }, []);
+
     const goodActivities = activities.filter((activity) => {
         return activity.isforGoodWeather === true;
     });
     const badActivities = activities.filter((activity) => {
         return activity.isforGoodWeather === false;
     });
+
     return (
         <>
             <>
@@ -55,7 +59,6 @@ function App() {
                 handleAddActivity={handleAddActivity}
             />
             <List
-                // onDeleteActivity={handleDeleteActivity}
                 onDeleteActivity={handleDeleteActivity}
                 activities={
                     weather.isGoodWeather ? goodActivities : badActivities
