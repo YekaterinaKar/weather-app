@@ -30,6 +30,8 @@ function App() {
             const weatherData = await response.json();
             console.log(weatherData);
             setWeather(weatherData);
+            console.log(weatherData.temperature);
+            console.log(weatherData.condition);
         }
         startFetching();
     }, []);
@@ -41,6 +43,10 @@ function App() {
     });
     return (
         <>
+            <>
+                <h2>{weather.temperature + "°C"} </h2>
+                <h2>{weather.condition} </h2>
+            </>
             <Form
                 onAddActivity={onActivitySubmit}
                 handleAddActivity={handleAddActivity}
