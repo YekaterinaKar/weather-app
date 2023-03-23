@@ -5,7 +5,7 @@ export default function List({
     onDeleteActivity,
 }) {
     return (
-        <>
+        <div className="lower">
             <h2>
                 {isforGoodWeather
                     ? "The weather is awesome, go outside and:"
@@ -20,6 +20,6 @@ export default function List({
                     />
                 ))}
             </ul>
-        </>
+        </div>
     );
 }
