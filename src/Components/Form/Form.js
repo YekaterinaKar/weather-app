@@ -1,3 +1,4 @@
+import "./Form.css";
 export default function Form({ onAddActivity, handleAddActivity }) {
     function addActivity(event) {
         event.preventDefault();
@@ -6,11 +7,11 @@ export default function Form({ onAddActivity, handleAddActivity }) {
 
         const activity = elements.name.value;
 
-        const isGoodWeather = elements.isGoodWeather.checked;
+        const isforGoodWeather = elements.isforGoodWeather.checked;
 
         const data = {
             name: activity,
-            isGoodWeather: isGoodWeather,
+            isforGoodWeather: isforGoodWeather,
         };
 
         onAddActivity(data);
@@ -20,15 +21,19 @@ export default function Form({ onAddActivity, handleAddActivity }) {
     }
 
     return (
-        <form onSubmit={(event) => addActivity(event)}>
+        <form className="form" onSubmit={(event) => addActivity(event)}>
             <h1>Add new Activity</h1>
 
-            <label htmlFor="name">Name</label>
+            <label className="label" htmlFor="name">
+                Name
+            </label>
             <br />
             <input id="name" text="name" name="name" />
             <br />
-            <input id="check" type="checkbox" name="isGoodWeather" />
-            <label htmlFor="check">Good Weather Activity</label>
+            <input id="check" type="checkbox" name="isforGoodWeather" />
+            <label className="label" htmlFor="check">
+                Good Weather Activity
+            </label>
             <br />
             <button type="submit">Submit</button>
             <br />
